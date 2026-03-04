@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_URL}`
       : 'https://docs.fireball.gg'
   ),
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'fireball codex',
     description:
