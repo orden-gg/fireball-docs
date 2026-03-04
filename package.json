@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fireballgg/sdk": "0.0.3",
+    "@tanstack/react-query": "5.90.21",
     "clsx": "2.1.1",
     "fumadocs-core": "16.6.0",
     "fumadocs-mdx": "14.2.7",

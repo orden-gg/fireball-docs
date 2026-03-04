@@ -1,7 +1,9 @@
 'use client';
 
+import { useMemo } from 'react';
 import items from '@fireballgg/sdk/data/items.json';
 import { UpscaleIcon } from './upscale-icon';
+import { useItemsLastSale } from '@/hooks/use-items-last-sale';
 
 interface Item {
   ID_CID: number;
@@ -25,11 +27,29 @@ const rarityColorVars: Record<number, string> = {
 };
 
 export function ItemsTable() {
+  const { data: lastSaleItems, isLoading } = useItemsLastSale();
+
+  const priceMap = useMemo(() => {
+    if (!lastSaleItems) return new Map<number, number>();
+
+    const map = new Map<number, number>();
+    lastSaleItems.forEach((item) => {
+      const itemId = parseInt(item.id);
+      if (item.currentPriceETH) {
+        map.set(itemId, parseFloat(item.currentPriceETH));
+      }
+    });
+
+    return map;
+  }, [lastSaleItems]);
+
+  console.log(priceMap);
+
   return (
     <div className="space-y-4">
 
       {/* Table */}
-      <div className="overflow-x-auto">
+      <div>
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-fd-border bg-fd-muted">
@@ -39,6 +59,7 @@ export function ItemsTable() {
               <th className="px-4 py-3 text-left text-sm font-semibold">Type</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Rarity</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Description</th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -61,6 +82,9 @@ export function ItemsTable() {
                 </td>
                 <td className="px-4 py-3 text-sm text-fd-muted-foreground max-w-md align-middle">
                   {item.DESCRIPTION_CID || '-'}
+                </td>
+                <td className="px-4 py-3 text-sm align-middle">
+                  {priceMap.has(item.ID_CID) ? `${priceMap.get(item.ID_CID)} eth` : '-'}
                 </td>
               </tr>
             ))}

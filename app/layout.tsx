@@ -1,5 +1,6 @@
 import './globals.css';
 import { RootProvider } from 'fumadocs-ui/provider/next';
+import { QueryProvider } from '@/components/query-provider';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
@@ -34,17 +35,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
-        <RootProvider
-          theme={{
-            enabled: true,
-            defaultTheme: 'dark',
-            attribute: 'class',
-            enableSystem: true,
-            disableTransitionOnChange: true,
-          }}
-        >
-          {children}
-        </RootProvider>
+        <QueryProvider>
+          <RootProvider
+            theme={{
+              enabled: true,
+              defaultTheme: 'dark',
+              attribute: 'class',
+              enableSystem: true,
+              disableTransitionOnChange: true,
+            }}
+          >
+            {children}
+          </RootProvider>
+        </QueryProvider>
       </body>
     </html>
   );
