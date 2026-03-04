@@ -24,12 +24,12 @@ Documentation improvements are always welcome! This includes:
 
 ### Submitting Changes
 
-1. **Fork the repository** and create a new branch from `master`
+1. **Fork the repository** and create a new branch from `main`
 2. **Make your changes** following our guidelines below
 3. **Test your changes locally** with `bun run dev`
 4. **Run type checking** with `bun run typecheck`
 5. **Commit your changes** with a clear commit message
-6. **Submit a pull request** to the `master` branch
+6. **Submit a pull request** to the `main` branch
 
 ## Development Setup
 
