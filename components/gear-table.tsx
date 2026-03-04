@@ -12,11 +12,12 @@ import { formatPrice } from '@/lib/utils';
 interface Gear {
   GAME_ITEM_ID_CID: number;
   NAME_CID: string;
-  GEAR_TYPE_CID: number;
-  TIER_CID: number;
-  EQUIPPABLE_TO_CID: number;
-  DURABILITY_CID_array: number[];
-  REPAIR_COUNT_CID: number;
+  GEAR_TYPE_CID?: number;
+  TIER_CID?: number;
+  EQUIPPABLE_TO_CID?: number;
+  DURABILITY_CID_array?: number[];
+  REPAIR_COUNT_CID?: number;
+  TYPE_CID?: number;
   itemEffects?: any[];
   repairCost?: any;
   LOOT_ID_CID?: number;
@@ -59,7 +60,7 @@ export function GearTable() {
     return map;
   }, [lastSaleItems]);
 
-  const getDurabilityRange = (durabilityArray: number[]) => {
+  const getDurabilityRange = (durabilityArray: number[] | undefined) => {
     if (!durabilityArray || durabilityArray.length === 0) return <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />;
     const min = Math.min(...durabilityArray);
     const max = Math.max(...durabilityArray);
@@ -96,11 +97,19 @@ export function GearTable() {
                 </td>
                 <td className="px-4 py-3 text-sm text-fd-muted-foreground align-middle">{item.GAME_ITEM_ID_CID}</td>
                 <td className="px-4 py-3 text-sm font-medium align-middle">{item.NAME_CID}</td>
-                <td className="px-4 py-3 text-sm align-middle">{gearTypeNames[item.GEAR_TYPE_CID] || item.GEAR_TYPE_CID}</td>
-                <td className="px-4 py-3 text-sm align-middle">{item.TIER_CID}</td>
-                <td className="px-4 py-3 text-sm align-middle">{equipToNames[item.EQUIPPABLE_TO_CID] || item.EQUIPPABLE_TO_CID}</td>
-                <td className="px-4 py-3 text-sm align-middle">{getDurabilityRange(item.DURABILITY_CID_array)}</td>
-                <td className="px-4 py-3 text-sm align-middle">{item.REPAIR_COUNT_CID}</td>
+                <td className="px-4 py-3 text-sm align-middle">
+                  {item.GEAR_TYPE_CID ? (gearTypeNames[item.GEAR_TYPE_CID] || item.GEAR_TYPE_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                </td>
+                <td className="px-4 py-3 text-sm align-middle">
+                  {item.TIER_CID ?? <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                </td>
+                <td className="px-4 py-3 text-sm align-middle">
+                  {item.EQUIPPABLE_TO_CID ? (equipToNames[item.EQUIPPABLE_TO_CID] || item.EQUIPPABLE_TO_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                </td>
+                <td className="px-4 py-3 text-sm align-middle">{getDurabilityRange(item.DURABILITY_CID_array || [])}</td>
+                <td className="px-4 py-3 text-sm align-middle">
+                  {item.REPAIR_COUNT_CID ?? <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                </td>
                 <td className="px-4 py-3 text-sm align-middle">
                   {isPriceLoading ? (
                     <Skeleton className="h-4 w-16" />
