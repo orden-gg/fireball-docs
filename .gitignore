@@ -8,12 +8,21 @@ out/
 # Production
 build/
 
-# Environment
+# Environment & Secrets
 .env
+.env.*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+*.pem
+*.key
+*.cert
+*.crt
+config/secrets.yml
+secrets.json
+credentials.json
 
 # Debug
 npm-debug.log*

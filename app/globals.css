@@ -31,10 +31,9 @@ dark {
  */
 
 @theme {
-  /* Font configuration - using system fonts, can be customized later */
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  /* Font configuration - using Inter and JetBrains Mono from Google Fonts */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 /* Base layer styles */
