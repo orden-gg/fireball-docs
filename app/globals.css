@@ -1,6 +1,26 @@
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+:root {
+  --color-common: oklch(0.87 0 0);
+  --color-uncommon: oklch(0.723 0.219 149.579);
+  --color-rare: oklch(0.623 0.214 259.815);
+  --color-epic: oklch(0.6412 0.264 322.54);
+  --color-legendary: oklch(0.795 0.184 86.047);
+  --color-relic: oklch(0.637 0.237 25.331);
+  --color-giga: oklch(0.95 0.15 300);
+}
+
+dark {
+  --color-common: oklch(0.87 0 0);
+  --color-uncommon: oklch(0.723 0.219 149.579);
+  --color-rare: oklch(0.623 0.214 259.815);
+  --color-epic: oklch(0.6412 0.264 322.54);
+  --color-legendary: oklch(0.795 0.184 86.047);
+  --color-relic: oklch(0.637 0.237 25.331);
+  --color-giga: oklch(0.95 0.15 300);
+}
 
 /* Scan fumadocs-ui components for Tailwind classes */
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
@@ -13,81 +33,8 @@
 @theme {
   /* Font configuration - using system fonts, can be customized later */
   --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
-}
-
-/* Light mode - minimal, clean */
-:root {
-  --color-fd-background: hsl(0, 0%, 98%);
-  --color-fd-foreground: hsl(240, 10%, 10%);
-  --color-fd-muted: hsl(240, 5%, 96%);
-  --color-fd-muted-foreground: hsl(240, 5%, 45%);
-  --color-fd-popover: hsl(0, 0%, 100%);
-  --color-fd-popover-foreground: hsl(240, 10%, 15%);
-  --color-fd-card: hsl(0, 0%, 100%);
-  --color-fd-card-foreground: hsl(240, 10%, 10%);
-  --color-fd-border: hsl(240, 6%, 90%);
-  --color-fd-primary: hsl(32, 95%, 50%); /* Fireball spark orange */
-  --color-fd-primary-foreground: hsl(0, 0%, 100%);
-  --color-fd-secondary: hsl(240, 5%, 93%);
-  --color-fd-secondary-foreground: hsl(240, 10%, 10%);
-  --color-fd-accent: hsl(240, 5%, 90%);
-  --color-fd-accent-foreground: hsl(240, 10%, 10%);
-  --color-fd-ring: hsl(32, 95%, 50%);
-}
-
-/* Dark mode - Fireball gaming aesthetic */
-.dark {
-  /* Deep dark background matching Fireball client */
-  --color-fd-background: hsl(265, 10%, 8%);
-  --color-fd-foreground: hsl(0, 0%, 95%);
-
-  /* Muted elements */
-  --color-fd-muted: hsl(265, 8%, 14%);
-  --color-fd-muted-foreground: hsl(265, 5%, 60%);
-
-  /* Popover/dropdown styling */
-  --color-fd-popover: hsl(265, 10%, 12%);
-  --color-fd-popover-foreground: hsl(0, 0%, 90%);
-
-  /* Card styling */
-  --color-fd-card: hsl(265, 10%, 11%);
-  --color-fd-card-foreground: hsl(0, 0%, 95%);
-
-  /* Borders - subtle with transparency */
-  --color-fd-border: hsl(0, 0%, 100%, 0.1);
-
-  /* Primary - Spark/Energy orange for gaming feel */
-  --color-fd-primary: hsl(32, 90%, 55%);
-  --color-fd-primary-foreground: hsl(265, 10%, 8%);
-
-  /* Secondary elements */
-  --color-fd-secondary: hsl(265, 8%, 16%);
-  --color-fd-secondary-foreground: hsl(0, 0%, 92%);
-
-  /* Accent - slightly warmer for hover states */
-  --color-fd-accent: hsl(265, 8%, 18%);
-  --color-fd-accent-foreground: hsl(0, 0%, 95%);
-
-  /* Ring focus indicator */
-  --color-fd-ring: hsl(32, 90%, 55%);
-}
-
-/* Gaming rarity colors for potential use in docs */
-:root {
-  --fireball-common: hsl(0, 0%, 85%);
-  --fireball-uncommon: hsl(142, 70%, 45%);
-  --fireball-rare: hsl(217, 90%, 55%);
-  --fireball-epic: hsl(282, 80%, 55%);
-  --fireball-legendary: hsl(45, 95%, 55%);
-  --fireball-relic: hsl(15, 90%, 50%);
-  --fireball-giga: hsl(316, 90%, 55%);
-
-  /* Game stat colors */
-  --fireball-hp: hsl(142, 60%, 55%);
-  --fireball-shield: hsl(195, 50%, 55%);
-  --fireball-energy: hsl(45, 90%, 55%);
-  --fireball-spark: hsl(32, 90%, 55%);
+  --font-mono:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
 }
 
 /* Base layer styles */
@@ -120,4 +67,11 @@
   .scrollbar-gaming::-webkit-scrollbar-thumb:hover {
     background: hsl(265, 8%, 35%);
   }
+}
+
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
