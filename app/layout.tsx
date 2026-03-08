@@ -3,21 +3,10 @@ import { RootProvider } from 'fumadocs-ui/provider/next';
 import { QueryProvider } from '@/components/query-provider';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Geist } from 'next/font/google';
 
-const iosevka = localFont({
-  src: [
-    {
-      path: './fonts/iosevka-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/iosevka-semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-  ],
+const geist = Geist({
+  subsets: ['latin'],
   variable: '--font-sans',
 });
 
@@ -58,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={iosevka.variable}>
+    <html lang="en" suppressHydrationWarning className={geist.variable}>
       <body className="flex min-h-screen flex-col">
         <QueryProvider>
           <RootProvider
