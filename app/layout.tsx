@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={geist.variable}>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col tracking-wide">
         <QueryProvider>
           <RootProvider
             theme={{
