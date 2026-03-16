@@ -1,7 +1,7 @@
 'use client';
 
 import enemies from '@fireballgg/sdk/data/enemies.json';
-import { getItemById } from '@fireballgg/sdk';
+import { getItemById, EnemyIdDungeonTypesLookup, DungeonTypeNameLookup } from '@fireballgg/sdk';
 import { Minus } from 'lucide-react';
 import { UpscaleIcon } from './upscale-icon';
 
@@ -31,6 +31,7 @@ export function EnemiesTable() {
             {STATS_LABELS.map((label) => (
               <th key={label} className="px-4 py-3 text-left text-sm font-semibold">{label}</th>
             ))}
+            <th className="px-4 py-3 text-left text-sm font-semibold">Dungeons</th>
           </tr>
         </thead>
         <tbody>
@@ -56,6 +57,9 @@ export function EnemiesTable() {
                   {enemy.MOVE_STATS_CID_array[i] ?? <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
                 </td>
               ))}
+              <td className="px-4 py-3 text-sm align-middle">
+                {EnemyIdDungeonTypesLookup[Number(enemy.ID_CID)]?.map((type) => DungeonTypeNameLookup[type]).join(', ') || <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+              </td>
             </tr>
           ))}
         </tbody>

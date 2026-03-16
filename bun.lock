@@ -4,7 +4,7 @@
     "": {
       "name": "@fireballgg/fireball-docs",
       "dependencies": {
-        "@fireballgg/sdk": "0.0.5",
+        "@fireballgg/sdk": "0.0.6",
         "@tanstack/react-query": "5.90.21",
         "clsx": "2.1.1",
         "fumadocs-core": "16.6.0",
@@ -144,7 +144,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.27.4", "", { "os": "win32", "cpu": "x64" }, "sha512-+knoa0BDoeXgkNvvV1vvbZX4+hizelrkwmGJBdT17t8FNPwG2lKemmuMZlmaNQ3ws3DKKCxpb4zRZEIp3UxFCg=="],
 
-    "@fireballgg/sdk": ["@fireballgg/sdk@0.0.5", "", { "dependencies": { "@aws-sdk/client-sqs": "3.1009.0", "@graphql-typed-document-node/core": "3.2.0", "axios": "1.13.6", "exponential-backoff": "3.1.2", "graphql": "16.11.0", "graphql-request": "7.2.0", "pino": "10.1.0", "pino-pretty": "13.1.2", "viem": "2.38.3", "zod": "3.25.76" } }, "sha512-7cUiHBXfqZqQvuIHzsEVCc7e54Q9F6fyU9jdIByNYjkTH94+mpCrGIks6DovtLEVo2w17QRTHOQhafB/F3v/xw=="],
+    "@fireballgg/sdk": ["@fireballgg/sdk@0.0.6", "", { "dependencies": { "@aws-sdk/client-sqs": "3.1009.0", "@graphql-typed-document-node/core": "3.2.0", "axios": "1.13.6", "exponential-backoff": "3.1.2", "graphql": "16.11.0", "graphql-request": "7.2.0", "pino": "10.1.0", "pino-pretty": "13.1.2", "viem": "2.38.3", "zod": "3.25.76" } }, "sha512-tyGMG34jLZnheOTTngMaxAlKfkE2D9Kag72QFOVvCFY6VQUr7LOrRlB2URdibri/7z1NCrZJ+/CmC3cBRfOB1w=="],
 
     "@floating-ui/core": ["@floating-ui/core@1.7.5", "", { "dependencies": { "@floating-ui/utils": "^0.2.11" } }, "sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ=="],
 

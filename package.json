@@ -25,7 +25,7 @@
     "prebuild": "fumadocs-mdx"
   },
   "dependencies": {
-    "@fireballgg/sdk": "0.0.5",
+    "@fireballgg/sdk": "0.0.6",
     "@tanstack/react-query": "5.90.21",
     "clsx": "2.1.1",
     "fumadocs-core": "16.6.0",
