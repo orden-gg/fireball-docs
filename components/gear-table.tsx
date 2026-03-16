@@ -65,7 +65,6 @@ export function GearTable() {
               <th className="px-4 py-3 text-left text-sm font-semibold">ID</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Name</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Gear Type</th>
-              <th className="px-4 py-3 text-left text-sm font-semibold">Tier</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Slot</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Durability</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Repairs</th>
@@ -85,9 +84,6 @@ export function GearTable() {
                 <td className="px-4 py-3 text-sm font-medium align-middle">{item.NAME_CID}</td>
                 <td className="px-4 py-3 text-sm align-middle">
                   {item.GEAR_TYPE_CID ? (GearTypeNameLookup[item.GEAR_TYPE_CID as keyof typeof GearTypeNameLookup] ?? item.GEAR_TYPE_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
-                </td>
-                <td className="px-4 py-3 text-sm align-middle">
-                  {item.TIER_CID ?? <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
                 </td>
                 <td className="px-4 py-3 text-sm align-middle">
                   {item.EQUIPPABLE_TO_CID ? (GearSlotNameLookup[item.EQUIPPABLE_TO_CID as keyof typeof GearSlotNameLookup] ?? item.EQUIPPABLE_TO_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
