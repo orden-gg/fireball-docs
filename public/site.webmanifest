@@ -1,6 +1,6 @@
 {
-  "name": "Fireball Codex",
-  "short_name": "Codex",
+  "name": "Fireball Docs",
+  "short_name": "Docs",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

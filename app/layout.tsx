@@ -12,8 +12,8 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | fireball codex',
-    default: 'fireball codex',
+    template: '%s | fireball docs',
+    default: 'fireball docs',
   },
   description:
     'Documentation for Fireball - The intelligent gaming bot platform for Gigaverse',
@@ -31,15 +31,15 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'fireball codex',
+    title: 'fireball docs',
     description:
       'Documentation for Fireball - The intelligent gaming bot platform for Gigaverse',
-    siteName: 'fireball codex',
+    siteName: 'fireball docs',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'fireball codex',
+    title: 'fireball docs',
     description:
       'Documentation for Fireball - The intelligent gaming bot platform for Gigaverse',
   },

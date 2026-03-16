@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Codex is the official documentation site for Fireball, a gaming automation platform for Gigaverse. It's built with Next.js 16, Fumadocs (a modern documentation framework), and Tailwind CSS 4.
+Fireball Docs is the official documentation site for Fireball, a gaming automation platform for Gigaverse. It's built with Next.js 16, Fumadocs (a modern documentation framework), and Tailwind CSS 4.
 
 ## Essential Commands
 

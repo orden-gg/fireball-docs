@@ -1,12 +1,12 @@
-# Fireball Codex
+# Fireball Docs
 
 Official documentation site for [Fireball](https://fireball.gg) - the intelligent gaming agent platform for Gigaverse.
 
-**Live Site**: [codex.fireball.gg](https://codex.fireball.gg)
+**Live Site**: [docs.fireball.gg](https://docs.fireball.gg)
 
 ## About
 
-Codex is the documentation repository for Fireball, a complementary game client and automation platform for [Gigaverse](https://gigaverse.io). Fireball helps players automate dungeon runs, manage fishing, run background services, and engage with the Gigaverse ecosystem efficiently.
+Fireball Docs is the documentation repository for Fireball, a complementary game client and automation platform for [Gigaverse](https://gigaverse.io). Fireball helps players automate dungeon runs, manage fishing, run background services, and engage with the Gigaverse ecosystem efficiently.
 
 ## Tech Stack
 
@@ -27,8 +27,8 @@ Codex is the documentation repository for Fireball, a complementary game client 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/orden-gg/codex.git
-cd codex
+git clone https://github.com/orden-gg/fireball-docs.git
+cd fireball-docs
 ```
 
 2. Install dependencies:
@@ -58,7 +58,7 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 ## Project Structure
 
 ```
-codex/
+fireball-docs/
 ├── app/                    # Next.js app directory
 │   ├── [[...slug]]/       # Dynamic documentation routes
 │   ├── api/               # API routes

@@ -13,7 +13,7 @@ body:
     attributes:
       label: Page URL
       description: Which page needs improvement?
-      placeholder: https://codex.fireball.gg/...
+      placeholder: https://docs.fireball.gg/...
     validations:
       required: true
 

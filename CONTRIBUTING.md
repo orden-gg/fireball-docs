@@ -1,6 +1,6 @@
-# Contributing to Fireball Codex
+# Contributing to Fireball Docs
 
-Thank you for your interest in contributing to the Fireball Codex! We welcome contributions from the community.
+Thank you for your interest in contributing to Fireball Docs! We welcome contributions from the community.
 
 ## How to Contribute
 
@@ -8,7 +8,7 @@ Thank you for your interest in contributing to the Fireball Codex! We welcome co
 
 If you find a bug, have a question, or want to suggest an improvement:
 
-1. Check if the issue already exists in the [issue tracker](https://github.com/orden-gg/codex/issues)
+1. Check if the issue already exists in the [issue tracker](https://github.com/orden-gg/fireball-docs/issues)
 2. If not, create a new issue with a clear title and description
 3. Include steps to reproduce (for bugs) or a detailed explanation (for features)
 
@@ -35,8 +35,8 @@ Documentation improvements are always welcome! This includes:
 
 1. Clone your fork:
 ```bash
-git clone https://github.com/YOUR_USERNAME/codex.git
-cd codex
+git clone https://github.com/YOUR_USERNAME/fireball-docs.git
+cd fireball-docs
 ```
 
 2. Install dependencies:
@@ -127,8 +127,8 @@ If you have questions about contributing, feel free to:
 
 ## License
 
-By contributing to Fireball Codex, you agree that your contributions will be licensed under the MIT License.
+By contributing to Fireball Docs, you agree that your contributions will be licensed under the MIT License.
 
 ---
 
-Thank you for contributing to Fireball Codex! 🎉
+Thank you for contributing to Fireball Docs! 🎉
