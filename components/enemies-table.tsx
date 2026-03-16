@@ -37,7 +37,7 @@ export function EnemiesTable() {
         <tbody>
           {(enemies as Enemy[]).map((enemy) => (
             <tr
-              key={enemy.docId}
+              key={enemy.ID_CID}
               className="border-b border-fd-border hover:bg-fd-muted/50 transition-colors"
             >
               <td className="px-4 py-3 text-sm text-fd-muted-foreground align-middle">{enemy.ID_CID}</td>
