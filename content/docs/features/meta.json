@@ -3,13 +3,12 @@
   "pages": [
     "dashboard",
     "jobs",
+    "services",
     "inventory",
     "pets-and-eggs",
     "roms",
     "world-and-crafting",
     "user-profiles",
-    "settings",
-    "notifications",
-    "pwa-install"
+    "notifications"
   ]
 }

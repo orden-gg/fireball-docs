@@ -3,9 +3,8 @@
   "pages": [
     "how-it-works",
     "sparks",
-    "buying-sparks",
-    "services",
     "quests-and-rewards",
-    "referrals"
+    "referrals",
+    "pwa-install"
   ]
 }

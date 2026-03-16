@@ -1,6 +1,6 @@
 ---
 title: Sparks
-description: Understanding Fireball's credit system and how to manage your balance
+description: Fireball's credit system — how it works, what it costs, and how to buy
 ---
 
 Sparks are Fireball's credit system — the fuel that powers automated dungeon runs, fishing sessions, and background services. Every action Fireball takes on your behalf consumes Sparks.
@@ -24,13 +24,13 @@ You need Sparks to:
 New users can claim the **Scroll of Noob** from the [Quests](/guides/quests-and-rewards) page for a **5-day free trial** of dungeon and fishing runs.
 
 <Callout type="info">
-  The Scroll of Noob covers game runs only. [Services](/guides/services) still require Sparks unless
+  The Scroll of Noob covers game runs only. [Services](/features/services) still require Sparks unless
   you have the **Scroll of Fire**, which grants free access to game runs and all services.
 </Callout>
 
 ### Purchasing with ETH
 
-After your trial, purchase Sparks on the [Sparks page](/guides/buying-sparks) using ETH. The page includes a cost calculator to estimate your needs based on game type and time range.
+Purchase Sparks on the Sparks page using ETH. The page includes a cost calculator to estimate your needs based on game type and time range.
 
 ### Quests & Airdrops
 
@@ -40,14 +40,17 @@ Some [quests](/guides/quests-and-rewards) reward Sparks — like the PWA Install
 
 Different activities consume different amounts of Sparks. Costs vary by game type, dungeon/fishing subtype, and agent AI model. Your account skills can also reduce costs.
 
-| Activity        | Cost Basis                         |
-| --------------- | ---------------------------------- |
-| Dungeon Run     | Varies by dungeon type and model   |
-| Fishing Session | Varies by fishing type             |
-| Services        | Per invocation (varies by service) |
-| Fishing Hints   | Per hint used in manual mode       |
+| Activity        | Cost Basis                        |
+| --------------- | --------------------------------- |
+| Dungeon Run     | Per run, varies by type and model |
+| Fishing Session | Per session, varies by type       |
+| Fish Seller     | Per invocation                    |
+| ROM Claimer     | Per claim operation               |
+| Loot Collector  | Per loot item processed           |
+| Hatchery        | Per maintenance operation         |
+| Fishing Hints   | Per hint in manual mode           |
 
-The exact Spark cost is always shown before you start a run or subscribe to a service. See [Spark Costs](/reference/spark-costs) for more details.
+Costs vary by game type, dungeon/fishing subtype, and agent AI model. Your account skills can also reduce costs. The exact Spark cost is always shown before you start a run or subscribe to a service.
 
 ## Managing Your Sparks
 
@@ -65,11 +68,26 @@ Track every Spark movement on the [Transactions](/features/dashboard) page. Each
 - **Running balance** — Your balance after that transaction
 - **Details** — Links to the specific dungeon, fishing session, or service
 
+| Type         | Description                                |
+| ------------ | ------------------------------------------ |
+| **Game**     | Sparks consumed by dungeon or fishing runs |
+| **Purchase** | ETH → Sparks purchases                     |
+| **Airdrop**  | Free Spark distributions                   |
+| **Service**  | Sparks consumed by automated services      |
+| **Hint**     | Sparks consumed by manual fishing hints    |
+
 Filter by transaction type to focus on specific activity.
 
 ### 30-Day Period Limit
 
 Each account can purchase a maximum of **20,000 Sparks per 30-day rolling period**. This limit is enforced by the smart contract. The Sparks page shows your remaining allowance.
+
+| Limit              | Value                                |
+| ------------------ | ------------------------------------ |
+| 30-day period cap  | 20,000 Sparks per account            |
+| Rolling window     | Resets on a 30-day rolling basis     |
+| Gas fee buffer     | 0.00002 ETH reserved per transaction |
+| Gift limit         | Receiver's own period limit applies  |
 
 ## Requirements
 
@@ -78,6 +96,62 @@ To use Sparks, you must:
 1. Have an active **Gigaverse account**
 2. Be under the effects of **Giga-Juice**
 3. Have a positive **Spark balance** (or an active scroll)
+
+## Purchasing Sparks
+
+Sparks are purchased with ETH directly from the Fireball dashboard.
+
+### Cost Calculator
+
+Before purchasing, use the built-in calculator to estimate how many Sparks you need:
+
+1. **Select a game type** — Dungeon or Fishing
+2. **Choose a time range** — Day, Week, Month, or Max
+
+The calculator factors in your account's energy regeneration rate and ROM energy production to estimate daily Spark consumption.
+
+| Time Range | What It Calculates                                              |
+| ---------- | --------------------------------------------------------------- |
+| **Day**    | Sparks for one full day of runs                                 |
+| **Week**   | Sparks for 7 days                                               |
+| **Month**  | Sparks for the current month                                    |
+| **Max**    | Maximum purchasable (limited by your ETH balance or period cap) |
+
+### Purchase Flow
+
+1. **Enter your desired amount** — type a Spark amount or an ETH amount; the other converts automatically
+2. **Review the cost** — see the total in ETH and its USD equivalent
+3. **Check your limits** — the page shows your remaining 30-day limit
+4. **Click "Purchase Sparks"** — confirm the wallet transaction
+5. **Wait for confirmation** — Sparks are processed within approximately 60 seconds
+
+<Callout type="info">
+  A small ETH buffer (0.00002 ETH) is reserved for gas fees. Your maximum purchase is calculated
+  after this reserve.
+</Callout>
+
+### Sending Sparks to Another Account
+
+You can gift Sparks to another player:
+
+1. Click the **wallet icon** to toggle the send-to-another-account mode
+2. **Search for the receiver** by name or enter their address
+3. The receiver must be **Giga-Juiced** to accept Sparks
+4. The receiver's own 30-day limit is checked separately
+5. Complete the purchase as usual
+
+<Callout type="warning">
+  Only Giga-Juiced accounts can receive Sparks. The receiver's remaining period limit applies, not
+  yours.
+</Callout>
+
+### Live ETH Pricing
+
+The Sparks page shows the current ETH price (refreshed every 60 seconds) and converts all values to USD in real time. The Spark price per unit is displayed so you can see exactly what you're paying.
+
+### Wallet Connection
+
+If your wallet isn't connected, the purchase button will prompt you to connect first. Fireball uses Abstract Global Wallet (AGW) for transactions — the same wallet you use for Gigaverse.
 
 ## Tips
 
