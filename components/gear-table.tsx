@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react';
 import gear from '@fireballgg/sdk/data/gear.json';
+import { GearTypeNameLookup, GearSlotNameLookup } from '@fireballgg/sdk';
 import { DollarSign, Minus } from 'lucide-react';
 import { UpscaleIcon } from './upscale-icon';
 import { useItemsLastSale } from '@/hooks/use-items-last-sale';
@@ -24,21 +25,6 @@ interface Gear {
   LOOT_AMOUNT_CID?: number;
 }
 
-const gearTypeNames: Record<number, string> = {
-  1: 'Head',
-  2: 'Body',
-  3: 'Legs',
-  4: 'Weapon',
-  5: 'Accessory',
-};
-
-const equipToNames: Record<number, string> = {
-  1: 'Fighter',
-  2: 'Mage',
-  3: 'Tank',
-  4: 'Ranger',
-  5: 'Support',
-};
 
 export function GearTable() {
   const { data: lastSaleItems, isLoading: isLoadingItems } = useItemsLastSale();
@@ -80,7 +66,7 @@ export function GearTable() {
               <th className="px-4 py-3 text-left text-sm font-semibold">Name</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Gear Type</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Tier</th>
-              <th className="px-4 py-3 text-left text-sm font-semibold">Equippable To</th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">Slot</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Durability</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Repairs</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Price</th>
@@ -98,13 +84,13 @@ export function GearTable() {
                 <td className="px-4 py-3 text-sm text-fd-muted-foreground align-middle">{item.GAME_ITEM_ID_CID}</td>
                 <td className="px-4 py-3 text-sm font-medium align-middle">{item.NAME_CID}</td>
                 <td className="px-4 py-3 text-sm align-middle">
-                  {item.GEAR_TYPE_CID ? (gearTypeNames[item.GEAR_TYPE_CID] || item.GEAR_TYPE_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                  {item.GEAR_TYPE_CID ? (GearTypeNameLookup[item.GEAR_TYPE_CID as keyof typeof GearTypeNameLookup] ?? item.GEAR_TYPE_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
                 </td>
                 <td className="px-4 py-3 text-sm align-middle">
                   {item.TIER_CID ?? <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
                 </td>
                 <td className="px-4 py-3 text-sm align-middle">
-                  {item.EQUIPPABLE_TO_CID ? (equipToNames[item.EQUIPPABLE_TO_CID] || item.EQUIPPABLE_TO_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
+                  {item.EQUIPPABLE_TO_CID ? (GearSlotNameLookup[item.EQUIPPABLE_TO_CID as keyof typeof GearSlotNameLookup] ?? item.EQUIPPABLE_TO_CID) : <Minus className="h-3.5 w-3.5 text-fd-muted-foreground" />}
                 </td>
                 <td className="px-4 py-3 text-sm align-middle">{getDurabilityRange(item.DURABILITY_CID_array || [])}</td>
                 <td className="px-4 py-3 text-sm align-middle">
