@@ -4,12 +4,13 @@
     "dashboard",
     "jobs",
     "services",
-    "inventory",
+    "bag",
     "pets",
     "eggs",
     "roms",
     "world-and-crafting",
-    "user-profiles",
-    "notifications"
+    "user-profile",
+    "notifications",
+    "leaderboard"
   ]
 }
