@@ -1,4 +1,40 @@
 ---
 title: v0.1.15
-description: Coming soon
+description: Void dungeons, conquest updates, jackpots rarity filter, pet feed overlay, and bug fixes
 ---
+
+_February 26, 2026_
+
+### Features
+
+- 🔥 Fireball games became ~x5 faster
+
+  |  | Before | After | Speedup |
+  | --- | --- | --- | --- |
+  | **Dungeons** | 272s | 58s | **x4.7** |
+  | **Fishing** | 52.8s | 10.7s | **x4.9** |
+
+- 🔥 Fishing v3
+
+  | Model | Win Rate | Wins | Total Games |
+  | --- | --- | --- | --- |
+  | V1 | 63.32% | 133,103 | 210,209 |
+  | V2 | 64.64% | 595,339 | 921,024 |
+  | **V3** | **71.34%** | 67,010 | 93,932 |
+- 🔥 Add void dungeon support with auto-nerf, crit protection, tier badges, void skills, and skip last room option ([Jobs](/features/jobs))
+- Add nerf and flee encounter display with nerf echo cost in void dungeon options ([Jobs](/features/jobs))
+- Add void stats, procs UI, and improved confirmation dialog for void dungeons ([Jobs](/features/jobs))
+- Add void event section with leaderboard
+- Conquest UI updates, concluded screen, crown leaderboard, and user faction highlighting ([Conquest](/features/conquest))
+- Add latest jackpots component with rarity and giga rarity filters 
+- Replace pet feed popover with in-card overlay ([Pets](/features/pets))
+- Add logout button to error state in auth gate
+
+### Bug Fixes
+
+- Fix fishing job win rate and stale run list on refetch ([Jobs](/features/jobs))
+- Fix job failures from stale energy data ([Jobs](/features/jobs))
+- Fix dungeon energy and spark cost display to use API data
+- Fix encounter round data and aggregate drops correctly
+- Fix conquest routes after migration
+- Fix faction treasury fetching and account faction update

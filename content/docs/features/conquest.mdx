@@ -1,0 +1,116 @@
+---
+title: Conquest
+description: Real-time faction-based territory control game where you claim and defend hexagonal tiles using faction stubs
+---
+
+Conquest is a multiplayer territorial strategy game where eight factions compete to control a hexagonal map. You spend faction-specific resources called **stubs** to attack enemy tiles or defend your own, with the standings updating each tick.
+
+## Factions
+
+Every player belongs to one of eight factions:
+
+Crusader, Overseer, Athena, Archon, Foxglove, Summoner, Chobo, Gigus
+
+Each faction has its own stub item used for conquest actions, a unique color on the map, and a shared treasury that members can pool resources into.
+
+## The Map
+
+The conquest map is a hexagonal grid. Each tile is controlled by the faction with the highest score on it. Tiles come in two types:
+
+| Tile Type | Description |
+| --- | --- |
+| **Regular** | Standard territory tiles |
+| **Nexus** | Special fort tiles worth more points and harder to hold |
+
+You can only act on tiles that are adjacent to your faction's existing territory or an unoccupied nexus.
+
+### Map Views
+
+- **2D view** — flat hex grid colored by faction control
+- **3D view** — elevated fort visualization with camera controls (WASD + mouse)
+
+Visualization options include fog of war, heat map mode, activity overlays, and custom color settings — all saved to local storage.
+
+## Actions
+
+Click any eligible tile to open the action panel. Two actions are available:
+
+| Action | Effect | Cost |
+| --- | --- | --- |
+| **Attack** | Reduces a target faction's score on the tile | Their faction's stubs |
+| **Defend** | Increases your faction's score on the tile | Your faction's stubs |
+
+Enter an amount, optionally draw from the faction treasury (if you have permission), and confirm. The map updates each tick as actions are processed.
+
+## Ticks & Rounds
+
+The game progresses in discrete **ticks**. A countdown timer shows time until the next tick. You can navigate tick history to review past map states. When a conquest round concludes, final standings and crown rewards are calculated.
+
+## Faction Hub
+
+The Faction Hub panel provides tools for coordinating with your faction:
+
+### Treasury
+
+The faction treasury is a shared pool of stubs. Authorized members can draw from it when taking conquest actions, letting the faction act collectively even if individual balances are low.
+
+### Orders
+
+Officers and leaders can create **orders** to direct faction members toward specific tiles. Orders track status (pending, in progress, completed) and any approved member can execute them.
+
+### Members
+
+The members list is split into three sections:
+
+| Section | Description |
+| --- | --- |
+| **Approved** | Active faction members with assigned ranks |
+| **Pending** | Applications awaiting approval |
+| **Invited** | Outgoing invitations awaiting acceptance |
+
+### Ranks
+
+Every approved member is assigned one of four ranks, from highest to lowest:
+
+| Rank | Description |
+| --- | --- |
+| **Leader** | Faction owner — cannot be demoted or reassigned through the UI |
+| **Warlord** | Senior rank with broad authority |
+| **Scout** | Mid-tier rank |
+| **Delegator** | Default rank assigned to new members |
+
+New members are always assigned the Delegator rank when approved. You cannot change your own rank even if you have the permission to change others.
+
+### Permissions
+
+Each rank has a configurable set of permissions that control what members can do in the faction. Permissions can be viewed per rank from the help panel in the Members section.
+
+| Permission | Description |
+| --- | --- |
+| **Change Member Rank** | Promote or demote other members (not yourself, not the Leader) |
+| **Kick Members** | Remove approved members from the faction |
+| **Approve Members** | Approve applications and send or cancel invitations |
+| **View Treasury** | See the faction treasury and stub balances |
+| **Use Treasury** | Draw from delegated treasury stubs when taking conquest actions |
+| **View Faction Moves** | See conquest actions taken by other faction members |
+| **View Orders** | See faction orders |
+| **Create Orders** | Create and manage faction orders |
+
+## Leaderboard
+
+The conquest leaderboard shows standings for both players and factions:
+
+- **Player standings** — rank, crowns earned, contribution percentage
+- **Faction standings** — total tiles controlled, points, participation rate
+- Filter by faction, sort by multiple metrics
+
+Your own faction is highlighted in the leaderboard for quick reference.
+
+## Tile Info Panel
+
+Clicking a tile shows detailed information:
+
+- Current faction scores with a live preview of how your action would affect them
+- Pending activity from other players
+- Contributor history (who attacked or defended and by how much)
+- Action controls with treasury toggle
